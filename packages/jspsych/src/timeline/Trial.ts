@@ -501,7 +501,7 @@ export class Trial extends TimelineNode {
    */
   private assignUniversalParameterValues(trialObject: TrialDescription) {
     for (const [parameterName, parameterConfig] of Object.entries(universalPluginParameters)) {
-      // `data` properties are evaluated when the trial result is created (see `getDataParameter()`)
+      // `data` is handled separately (see `getDataParameter()`)
       if (parameterName === "data" || Object.hasOwn(this.pluginInfo.parameters, parameterName)) {
         continue;
       }
